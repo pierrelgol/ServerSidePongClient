@@ -15,7 +15,7 @@ pub fn build(b: *std.Build) void {
 
     // main executable
     const exe = b.addExecutable(.{
-        .name = "SSPC",
+        .name = "sspc",
         .root_source_file = b.path("src/main.zig"),
         .target = target,
         .optimize = optimize,
@@ -51,7 +51,7 @@ pub fn build(b: *std.Build) void {
 
     // ZLS - check step.
     const check_exe = b.addExecutable(.{
-        .name = "SSPC",
+        .name = "sspc",
         .root_source_file = b.path("src/main.zig"),
         .target = target,
         .optimize = optimize,

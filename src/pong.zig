@@ -12,6 +12,7 @@
 
 const std = @import("std");
 const rl = @import("raylib");
+const builtin = @import("builtin");
 pub const Pong = @This();
 const Player = @import("player.zig").Player;
 const Paddle = @import("paddle.zig").Paddle;
@@ -51,7 +52,9 @@ pub fn drawBoard(self: Pong) void {
 pub fn drawBall(self: Pong) void {
     self.ball.drawBackground();
     self.ball.drawLines();
-    self.ball.drawHitBox();
+    if (builtin.mode == .Debug) {
+        self.ball.drawHitBox();
+    }
 }
 
 pub fn drawPaddles(self: Pong) void {

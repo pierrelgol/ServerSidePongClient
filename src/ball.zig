@@ -87,11 +87,11 @@ pub fn move(self: *Ball, delta_time: f32, bounds: rl.Rectangle, paddle1: rl.Rect
     // Handle collisions with paddles
     if (rl.checkCollisionRecs(self.hitbox, paddle1)) {
         self.velocity.x *= -1; // Reverse X direction
-        self.velocity.x *= 1.2; // Optional: Increase speed slightly
+        self.velocity.x *= 1.1; // Optional: Increase speed slightly
         hit = .lpad;
     } else if (rl.checkCollisionRecs(self.hitbox, paddle2)) {
         self.velocity.x *= -1; // Reverse X direction
-        self.velocity.x *= 1.2; // Optional: Increase speed slightly
+        self.velocity.x *= 1.1; // Optional: Increase speed slightly
         hit = .rpad;
     }
 

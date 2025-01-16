@@ -136,9 +136,9 @@ fn gameLoop(screen_width: i32, screen_height: i32, title: [*:0]const u8, allocat
         game.drawPaddles();
         drawScore(allocator, game.player1.score, game.player2.score, screen_width);
 
-        if (game.player1.score >= 1 or game.player2.score >= 1) {
+        if (game.player1.score >= 3 or game.player2.score >= 3) {
             const winner_text = if (game.player1.score >= 1) "Player 1 Wins!" else "Player 2 Wins!";
-            const winner_color = if (game.player1.score >= 1) game.player1.color else game.player2.color;
+            const winner_color = if (game.player1.score >= 3) game.player1.color else game.player2.color;
 
             const restart = gameOverScreen(winner_text, winner_color, screen_width, screen_height);
             if (restart != 0) {
